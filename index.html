@@ -73,6 +73,160 @@
     .hero-art{order:-1; margin-bottom:20px;}
     .hero-art svg{max-width:280px;}
   }
+
+  /* ================= SECTIONS ADDED BELOW HERO ================= */
+  :root{
+    --purple-soft:#efe9f8;
+    --coral-soft:#fce9e6;
+    --pink-soft:#fbe8f0;
+    --ink-soft:#544a6e;
+    --ink-faint:#9089a6;
+    --line:rgba(46,39,72,0.10);
+    --line-soft:rgba(46,39,72,0.06);
+  }
+  .section{max-width:1200px; margin:0 auto; padding:100px 32px;}
+  .section.alt{background:var(--blush); max-width:none; padding-left:0; padding-right:0;}
+  .section.alt > .inner{max-width:1200px; margin:0 auto; padding:0 32px;}
+  .section-head{max-width:620px; margin-bottom:52px;}
+  .eyebrow-sm{font-size:13px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:var(--purple-deep); margin:0 0 14px;}
+  .section-head h2{font-family:var(--serif); font-weight:400; font-size:clamp(26px,3.2vw,36px); margin:0; letter-spacing:-0.01em;}
+  .section-head p{font-size:16px; line-height:1.65; color:var(--ink-soft); margin:16px 0 0;}
+
+  /* signature transcript -> panels */
+  .prism{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:0; margin-top:20px;}
+  .transcript-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:24px; font-family:'IBM Plex Mono',monospace; font-size:13px; line-height:1.9; color:var(--ink-soft);}
+  .transcript-card .who{color:var(--ink); font-weight:600;}
+  .hi1{background:var(--purple-soft); color:var(--purple-deep); border-radius:4px; padding:1px 5px;}
+  .hi2{background:var(--coral-soft); color:#b3574a; border-radius:4px; padding:1px 5px;}
+  .hi3{background:var(--pink-soft); color:#b7477a; border-radius:4px; padding:1px 5px;}
+  .prism-lines{width:80px; height:170px;}
+  .prism-lines path{fill:none; stroke-width:2; stroke-dasharray:140; stroke-dashoffset:140; animation:draw 1.2s ease forwards;}
+  .p1{stroke:var(--purple-deep); animation-delay:.15s;}
+  .p2{stroke:var(--coral); animation-delay:.35s;}
+  .p3{stroke:var(--pink); animation-delay:.55s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .panel-stack{display:flex; flex-direction:column; gap:12px;}
+  .mini-panel{border-radius:10px; padding:14px 16px; border:1px solid var(--line); background:#fff;}
+  .mini-panel.th{border-left:3px solid var(--purple-deep);} .mini-panel.th .tag{color:var(--purple-deep);}
+  .mini-panel.do{border-left:3px solid var(--coral);} .mini-panel.do .tag{color:#b3574a;}
+  .mini-panel.be{border-left:3px solid var(--pink);} .mini-panel.be .tag{color:#b7477a;}
+  .mini-panel .tag{font-size:10.5px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase;}
+  .mini-panel .body{font-size:13.5px; margin-top:5px; color:var(--ink);}
+  .mini-panel .note{font-size:11.5px; color:var(--ink-faint); margin-top:3px;}
+  @media(max-width:900px){.prism{grid-template-columns:1fr; gap:20px;} .prism-lines{display:none;}}
+
+  /* stat bar */
+  .statbar{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:36px 0; background:var(--blush);}
+  .statbar .inner{max-width:1200px; margin:0 auto; padding:0 32px; display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap;}
+  .stat{flex:1; min-width:180px;}
+  .stat .num{font-family:var(--serif); font-size:28px; color:var(--ink);}
+  .stat .lbl{font-size:13px; color:var(--ink-soft); margin-top:4px;}
+
+  /* tabs */
+  .tabs{display:flex; gap:10px; margin-bottom:36px;}
+  .tab-btn{padding:10px 20px; border-radius:10px; border:1.5px solid var(--purple-deep); background:transparent; color:var(--purple-deep); font-size:14px; font-weight:500; font-family:var(--sans); cursor:pointer; transition:all .2s;}
+  .tab-btn.active{background:var(--purple-deep); color:var(--cream);}
+  .tab-panel{display:none;}
+  .tab-panel.active{display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start;}
+  .tab-panel ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:18px;}
+  .tab-panel li{display:flex; gap:12px; font-size:15px; line-height:1.6; color:var(--ink);}
+  .tab-panel li .check{flex-shrink:0; width:20px; height:20px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; margin-top:2px; background:var(--purple-soft); color:var(--purple-deep);}
+  .tab-quote{background:#fff; border:1px solid var(--line); border-radius:14px; padding:28px; font-family:var(--serif); font-style:italic; font-size:18px; line-height:1.5; color:var(--ink);}
+  .tab-quote cite{display:block; font-family:var(--sans); font-style:normal; font-size:13px; color:var(--ink-faint); margin-top:16px;}
+  @media(max-width:760px){.tab-panel.active{grid-template-columns:1fr;}}
+
+  /* thinking/doing/being panels */
+  .panels{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .panel-card{border-radius:14px; padding:30px 26px; border:1px solid var(--line); background:#fff;}
+  .panel-card .pnum{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--ink-faint);}
+  .panel-card h3{font-family:var(--serif); font-weight:400; font-size:22px; margin:12px 0 0;}
+  .panel-card p{color:var(--ink-soft); font-size:14.5px; line-height:1.65; margin-top:12px;}
+  .panel-card.th{border-top:3px solid var(--purple-deep);} .panel-card.th h3{color:var(--purple-deep);}
+  .panel-card.do{border-top:3px solid var(--coral);} .panel-card.do h3{color:#c4634f;}
+  .panel-card.be{border-top:3px solid var(--pink);} .panel-card.be h3{color:#c2568a;}
+  .distinction{display:flex; gap:14px; margin-top:20px; padding-top:20px; border-top:1px solid var(--line-soft); flex-wrap:wrap;}
+  .dtag{flex:1; min-width:110px;}
+  .dtag .dl{display:inline-block; font-size:10px; font-weight:700; letter-spacing:0.03em; padding:3px 8px; border-radius:5px; margin-bottom:7px;}
+  .dtag.constraint .dl{background:var(--line-soft); color:var(--ink-soft);}
+  .dtag.conflict .dl{background:var(--pink-soft); color:#c2568a;}
+  .dtag p{font-size:12.5px; margin:0; color:var(--ink-soft); line-height:1.55;}
+  @media(max-width:900px){.panels{grid-template-columns:1fr;}}
+
+  .pipeline{display:flex; align-items:center; justify-content:center; gap:0; margin-top:50px; flex-wrap:wrap;}
+  .pipe-step{display:flex; align-items:center; gap:12px;}
+  .pipe-step .circ{width:38px; height:38px; border-radius:50%; border:1px solid var(--line); background:#fff; display:flex; align-items:center; justify-content:center; font-family:'IBM Plex Mono'; font-size:12px; color:var(--ink-soft);}
+  .pipe-step .lbl{font-size:14px; color:var(--ink-soft);}
+  .pipe-arrow{color:var(--ink-faint); margin:0 20px; font-size:18px;}
+  @media(max-width:700px){.pipe-arrow{margin:0 10px;}}
+
+  /* testimonials */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:26px;}
+  .testi-card .qmark{font-family:var(--serif); font-size:34px; line-height:1; color:var(--lavender);}
+  .testi-card p{font-size:14.5px; line-height:1.6; margin-top:6px; color:var(--ink);}
+  .testi-foot{margin-top:18px;}
+  .testi-tag{font-size:10px; font-weight:700; padding:3px 8px; border-radius:5px;}
+  .testi-tag.th{background:var(--purple-soft); color:var(--purple-deep);}
+  .testi-tag.do{background:var(--coral-soft); color:#b3574a;}
+  .testi-tag.be{background:var(--pink-soft); color:#b7477a;}
+  .testi-role{font-size:12px; color:var(--ink-faint); margin-top:8px;}
+  .testi-note{margin-top:32px; font-size:12.5px; color:var(--ink-faint); text-align:center;}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* pricing */
+  .pricing-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:40px; max-width:440px; text-align:center; margin:0 auto;}
+  .pricing-card .price{font-family:var(--serif); font-size:40px; margin-top:8px;}
+  .pricing-card .price span{font-size:14px; font-family:var(--sans); color:var(--ink-faint); font-weight:400;}
+  .pricing-card ul{list-style:none; padding:0; margin:24px 0; text-align:left; display:flex; flex-direction:column; gap:11px;}
+  .pricing-card li{font-size:14px; color:var(--ink-soft); display:flex; gap:9px;}
+  .pricing-card li .check{color:var(--purple-deep);}
+  .pricing-note{font-size:12.5px; color:var(--ink-faint); margin-top:18px;}
+
+  /* about */
+  .about-grid{display:grid; grid-template-columns:1fr 1.2fr; gap:50px; align-items:center;}
+  .about-grid p{color:var(--ink-soft); font-size:15.5px; line-height:1.75;}
+  .about-grid p+p{margin-top:14px;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
+
+  /* faq */
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%; text-align:left; background:none; border:none; color:var(--ink); font-family:var(--serif); font-size:18px; padding:24px 0; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:20px;}
+  .faq-q .plus{font-family:'IBM Plex Mono'; font-size:18px; color:var(--ink-faint); transition:transform .25s; flex-shrink:0;}
+  .faq-item.open .plus{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+  .faq-a p{color:var(--ink-soft); font-size:14.5px; line-height:1.7; padding-bottom:24px; max-width:640px;}
+
+  /* cta band */
+  .ctaband{padding:90px 32px; text-align:center; background:var(--ink); color:var(--cream);}
+  .ctaband .inner{max-width:600px; margin:0 auto;}
+  .ctaband h2{font-family:var(--serif); font-weight:400; color:var(--cream); font-size:clamp(26px,3.6vw,38px); margin:0;}
+  .ctaband p{color:var(--lavender); margin-top:14px; font-size:15px;}
+  .ctaband .cta-row{justify-content:center; margin-top:28px; margin-bottom:0;}
+  .ctaband .btn-primary{background:var(--cream); color:var(--ink);}
+  .ctaband .btn-secondary{border-color:rgba(251,246,244,0.35); color:var(--cream);}
+
+  /* dictionary */
+  .dict{padding:60px 32px; border-top:1px solid var(--line); max-width:1200px; margin:0 auto;}
+  .dict .word{font-family:var(--serif); font-size:28px; color:var(--ink);}
+  .dict .pron{font-family:'IBM Plex Mono'; font-size:13px; color:var(--ink-faint); margin-left:10px;}
+  .dict .pos{font-style:italic; color:var(--ink-faint); font-size:13px; margin-top:12px; display:block;}
+  .dict ol{margin:8px 0 0; padding-left:20px; color:var(--ink-soft); font-size:14.5px; line-height:1.8;}
+
+  /* footer */
+  footer{background:var(--blush); padding:56px 32px 28px; border-top:1px solid var(--line);}
+  .foot-grid{max-width:1200px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:36px;}
+  .foot-col h4{font-family:var(--sans); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--purple-deep); margin:0 0 14px;}
+  .foot-col a, .foot-col p{display:block; font-size:14px; color:var(--ink-soft); margin:0 0 9px; text-decoration:none;}
+  .foot-col a:hover{color:var(--ink);}
+  .foot-bottom{max-width:1200px; margin:46px auto 0; padding-top:22px; border-top:1px solid var(--line); display:flex; justify-content:space-between; color:var(--ink-faint); font-size:13px; flex-wrap:wrap; gap:10px;}
+  @media(max-width:700px){.foot-grid{grid-template-columns:1fr; gap:26px;}}
+
+  .flag{display:inline-block; font-size:10.5px; font-family:'IBM Plex Mono'; color:#b3574a; background:var(--coral-soft); padding:2px 7px; border-radius:5px; margin-left:8px; vertical-align:middle; text-transform:none; letter-spacing:0;}
+
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:.001s !important; transition-duration:.001s !important;} }
 </style>
 </head>
 <body>
@@ -101,12 +255,12 @@
     Entellispace
   </div>
   <div class="links">
-    <a href="#">Product</a>
-    <a href="#">How it works</a>
-    <a href="#">Pricing</a>
-    <a href="#">About</a>
+    <a href="#panels">Product</a>
+    <a href="#panels">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#about">About</a>
   </div>
-  <a href="#" class="nav-cta">Book a demo</a>
+  <a href="https://calendar.app.google/6BJwBHJhTrjFKNL97" target="_blank" rel="noopener" class="nav-cta">Book a demo</a>
 </nav>
 
 <div class="hero">
@@ -115,8 +269,8 @@
     <h1>Every team,<br><em>always aligned.</em></h1>
     <p class="sub">Entellispace listens to your meetings and tells you what actually happened — the decisions made, the work assigned, and the tensions nobody said out loud.</p>
     <div class="cta-row">
-      <a href="#" class="btn btn-primary">See it on your next meeting</a>
-      <a href="#" class="btn btn-secondary">How it works</a>
+      <a href="https://intellispace-mvp.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">See it on your next meeting</a>
+      <a href="#panels" class="btn btn-secondary">How it works</a>
     </div>
     <p class="thesis">"Conflict is not failure; it is the friction that reveals misalignment."</p>
   </div>
@@ -126,6 +280,301 @@
     <svg viewBox="0 0 788.7 933.15" xmlns="http://www.w3.org/2000/svg"><path fill="#b39dde" d="m643.83,240.66v607.9c-14.04,10.58-28.84,20.21-44.3,28.81-.71.4-1.44.8-2.17,1.19-4.73,2.6-9.53,5.1-14.39,7.49-.96.48-1.93.95-2.9,1.42-.63.3-1.27.61-1.91.92-2.45,1.16-4.92,2.31-7.41,3.42-.92.42-1.84.83-2.77,1.23-1.53.68-3.06,1.35-4.61,2-1.31.56-2.62,1.11-3.94,1.65-1.16.48-2.33.95-3.5,1.42-1.17.47-2.34.93-3.52,1.39-.1.04-.19.08-.28.11-1.52.59-3.05,1.17-4.58,1.74-1.53.57-3.07,1.13-4.61,1.68-1.58.57-3.17,1.13-4.77,1.68-1.63.56-3.26,1.11-4.9,1.64-22.63,7.43-46.2,12.8-70.47,15.89h-97.73c-26.2-3.34-51.58-9.34-75.85-17.71-3.72-1.28-7.41-2.62-11.07-4.01-1.13-.43-2.25-.86-3.37-1.3-.67-.26-1.35-.53-2.02-.8-.77-.3-1.55-.61-2.32-.93-1.08-.43-2.14-.87-3.21-1.31-.44-.19-.89-.37-1.33-.56-1.04-.44-2.07-.87-3.09-1.32-.94-.4-1.87-.81-2.8-1.22-.62-.27-1.23-.54-1.85-.82-2.19-.97-4.37-1.97-6.53-2.99-4.34-2.04-8.64-4.15-12.89-6.35-1.05-.54-2.11-1.09-3.15-1.65-6.33-3.34-12.56-6.86-18.67-10.54-1.02-.61-2.04-1.23-3.05-1.86-.89-.54-1.78-1.09-2.66-1.65-.93-.58-1.86-1.17-2.78-1.76-1.15-.73-2.29-1.47-3.43-2.22-1.14-.74-2.28-1.49-3.41-2.25-1.13-.76-2.26-1.52-3.38-2.29-1.13-.77-2.24-1.55-3.36-2.33-1.11-.78-2.22-1.57-3.33-2.36-1.11-.79-2.21-1.59-3.3-2.39-.83-.6-1.65-1.21-2.47-1.82-1.22-.92-2.44-1.84-3.66-2.77-.61-.47-1.22-.93-1.82-1.4-.61-.46-1.21-.93-1.81-1.4-1.07-.84-2.13-1.68-3.2-2.53-2.12-1.7-4.22-3.42-6.31-5.16-1.04-.87-2.08-1.75-3.11-2.63V219.54c.42-.23.85-.46,1.29-.69,34.27-88.14,119.32-150.91,219.22-152.38h7.2c99.87,1.47,184.91,64.21,219.2,152.31,11.31,5.95,21.75,13.32,31.08,21.88Z"/><path fill="#b39dde" d="m643.83,237.35v611.21c-14.04,10.58-28.84,20.21-44.3,28.81-.71.4-1.44.8-2.17,1.19-4.73,2.6-9.53,5.1-14.39,7.49-.96.48-1.93.95-2.9,1.42-.63.3-1.27.61-1.91.92-2.45,1.16-4.92,2.31-7.41,3.42-.92.42-1.84.83-2.77,1.23-1.53.68-3.06,1.35-4.61,2-1.31.56-2.62,1.11-3.94,1.65-1.16.48-2.33.95-3.5,1.42-1.17.47-2.34.93-3.52,1.39-.1.04-.19.08-.28.11-1.52.59-3.05,1.17-4.58,1.74-1.53.57-3.07,1.13-4.61,1.68-1.58.57-3.17,1.13-4.77,1.68-1.63.56-3.26,1.11-4.9,1.64-22.63,7.43-46.2,12.8-70.47,15.89-16,2.05-32.29,3.1-48.84,3.1s-32.88-1.05-48.89-3.1c-26.2-3.34-51.58-9.34-75.85-17.71-3.72-1.28-7.41-2.62-11.07-4.01-1.13-.43-2.25-.86-3.37-1.3-.67-.26-1.35-.53-2.02-.8-.77-.3-1.55-.61-2.32-.93-1.08-.43-2.14-.87-3.21-1.31-.44-.19-.89-.37-1.33-.56-1.04-.44-2.07-.87-3.09-1.32-.94-.4-1.87-.81-2.8-1.22-.62-.27-1.23-.54-1.85-.82-2.19-.97-4.37-1.97-6.53-2.99-4.34-2.04-8.64-4.15-12.89-6.35-1.05-.54-2.11-1.09-3.15-1.65-6.33-3.34-12.56-6.86-18.67-10.54-1.02-.61-2.04-1.23-3.05-1.86-.89-.54-1.78-1.09-2.66-1.65-.93-.58-1.86-1.17-2.78-1.76-1.15-.73-2.29-1.47-3.43-2.22-1.14-.74-2.28-1.49-3.41-2.25-1.13-.76-2.26-1.52-3.38-2.29-1.13-.77-2.24-1.55-3.36-2.33-1.11-.78-2.22-1.57-3.33-2.36-1.11-.79-2.21-1.59-3.3-2.39-.83-.6-1.65-1.21-2.47-1.82-1.22-.92-2.44-1.84-3.66-2.77-.61-.47-1.22-.93-1.82-1.4-.61-.46-1.21-.93-1.81-1.4-1.07-.84-2.13-1.68-3.2-2.53-2.12-1.7-4.22-3.42-6.31-5.16-1.04-.87-2.08-1.75-3.11-2.63V251.99c66.79-57.02,153.43-91.43,248.12-91.43,86.28,0,165.89,28.58,229.87,76.79Z"/><circle fill="#ec977f" cx="405.04" cy="694.15" r="238.99"/><path fill="#e77c87" stroke="#443a63" stroke-width="2" d="m643.83,459.89v388.67c-14.04,10.58-28.84,20.21-44.3,28.81-.71.4-1.44.8-2.17,1.19-4.73,2.6-9.53,5.1-14.39,7.49-.96.48-1.93.95-2.9,1.42-.63.3-1.27.61-1.91.92-2.45,1.16-4.92,2.31-7.41,3.42-.92.42-1.84.83-2.77,1.23-1.53.68-3.06,1.35-4.61,2-1.31.56-2.62,1.11-3.94,1.65-1.16.48-2.33.95-3.5,1.42-1.17.47-2.34.93-3.52,1.39-.1.04-.19.08-.28.11-1.52.59-3.05,1.17-4.58,1.74-1.53.57-3.07,1.13-4.61,1.68-1.58.57-3.17,1.13-4.77,1.68-1.63.56-3.26,1.11-4.9,1.64-72-41.18-120.52-118.72-120.52-207.6,0-129.34,102.76-234.69,231.08-238.86Z"/><path fill="#e17da6" stroke="#443a63" stroke-width="2" d="m406.61,698.75c0,87.59-47.12,164.17-117.39,205.78-3.72-1.28-7.41-2.62-11.07-4.01-1.13-.43-2.25-.86-3.37-1.3-.67-.26-1.35-.53-2.02-.8-.77-.3-1.55-.61-2.32-.93-1.08-.43-2.14-.87-3.21-1.31-.44-.19-.89-.37-1.33-.56-1.04-.44-2.07-.87-3.09-1.32-.94-.4-1.87-.81-2.8-1.22-.62-.27-1.23-.54-1.85-.82-2.19-.97-4.37-1.97-6.53-2.99-4.34-2.04-8.64-4.15-12.89-6.35-1.05-.54-2.11-1.09-3.15-1.65-6.33-3.34-12.56-6.86-18.67-10.54-1.02-.61-2.04-1.23-3.05-1.86-.89-.54-1.78-1.09-2.66-1.65-.93-.58-1.86-1.17-2.78-1.76-1.15-.73-2.29-1.47-3.43-2.22-1.14-.74-2.28-1.49-3.41-2.25-1.13-.76-2.26-1.52-3.38-2.29-1.13-.77-2.24-1.55-3.36-2.33-1.11-.78-2.22-1.57-3.33-2.36-1.11-.79-2.21-1.59-3.3-2.39-.83-.6-1.65-1.21-2.47-1.82-1.22-.92-2.44-1.84-3.66-2.77-.61-.47-1.22-.93-1.82-1.4-.61-.46-1.21-.93-1.81-1.4-1.07-.84-2.13-1.68-3.2-2.53-2.12-1.7-4.22-3.42-6.31-5.16-1.04-.87-2.08-1.75-3.11-2.63v-374.15c.59-.01,1.19-.01,1.78-.01,131.99,0,238.99,107.01,238.99,239Z"/><path fill="#715daf" d="m643.83,632.67v289.57c-9.77,2.03-19.9,3.1-30.27,3.1-81.68,0-147.89-66.21-147.89-147.89s66.21-147.89,147.89-147.89c10.37,0,20.5,1.07,30.27,3.11Z"/><path fill="#725bae" d="m344,777.45c0,81.68-66.21,147.89-147.89,147.89-10.37,0-20.5-1.07-30.27-3.1v-289.57c9.77-2.04,19.9-3.11,30.27-3.11,81.68,0,147.89,66.22,147.89,147.89Z"/><path fill="#6d5cab" d="m788.7,69.09l-114.09,122.23-31.25,33.47-37.3,39.95-43.14,46.21-37.17,39.82-19.29,20.67-31.48,33.72-10.1,10.82-52,55.7-64.48-60.2-9.79-9.13-32.58-30.41-35.02-32.71c-.06-.05-.12-.11-.18-.16l-1.64-1.52s-.08-.08-.12-.12l-60.27-56.27-43-40.13-39.74-37.11L0,86.24C41.75,47.79,97.22,24.03,158.23,23.13c1.2-.02,2.4-.03,3.6-.03s2.4,0,3.6.03c35.19.51,68.53,8.64,98.46,22.8C302.49,17.71,349.88.78,401.18.03c1.2-.02,2.4-.03,3.6-.03s2.4.01,3.6.03c51.3.76,98.68,17.67,137.28,45.9,29.93-14.16,63.28-22.29,98.47-22.8,1.2-.02,2.4-.03,3.6-.03s2.4,0,3.6.03c51.34.76,98.75,17.7,137.37,45.96Z"/><path fill="#ee8375" d="m643.78,238.99c0,78.53-37.88,148.2-96.34,191.78h-.01c-26.78-2.04-51.56-11.21-72.45-25.61-25.72-17.73-45.54-43.39-55.94-73.45,1.39,4.59,2.92,9.12,4.58,13.58,9.65,26,23.7,49.86,41.26,70.69,11.89,14.13,25.39,26.85,40.22,37.9.58.43,1.15.85,1.73,1.28-30.95,14.64-65.54,22.83-102.05,22.83s-71.1-8.18-102.05-22.83c.58-.43,1.17-.86,1.75-1.29h0c16.38-12.21,31.14-26.46,43.91-42.39,18.23-22.74,32.39-48.89,41.37-77.34-10.05,27.48-28.03,51.14-51.16,68.21-21.7,16.04-47.95,26.27-76.46,28.43-36.7-27.34-65.28-64.96-81.48-108.59-9.4-25.31-14.63-52.64-14.87-81.16,0-.68,0-1.36,0-2.04,0-29.25,5.26-57.28,14.88-83.19.42-1.13.85-2.26,1.29-3.39,16.67-42.88,45.36-79.75,81.93-106.48C302.49,17.71,349.88.78,401.18.03c1.2-.02,2.4-.03,3.6-.03s2.4.01,3.6.03c51.3.76,98.68,17.67,137.28,45.9,36.56,26.71,65.24,63.56,81.92,106.41,8.83,22.68,14.29,47.03,15.78,72.45.28,4.7.42,9.43.42,14.2Z"/><path fill="#e17da6" d="m547.43,430.77c-12.63,9.41-26.22,17.6-40.6,24.39-.58-.43-1.15-.85-1.73-1.28-14.83-11.05-28.33-23.77-40.22-37.9-17.56-20.83-31.61-44.69-41.26-70.69-1.66-4.46-3.19-8.99-4.58-13.58,10.4,30.06,30.22,55.72,55.94,73.45,20.89,14.4,45.67,23.57,72.45,25.61Z"/><path fill="#6f58ad" d="m674.61,191.32c20.1,25.25,32.1,57.22,32.1,91.99,0,43.19-18.52,82.06-48.05,109.09-26.3,24.1-61.35,38.8-99.84,38.8-3.83,0-7.62-.15-11.38-.43h-.01c-26.78-2.04-51.56-11.21-72.45-25.61-25.72-17.73-45.54-43.39-55.94-73.45-2.84-9.33-5.12-18.9-6.81-28.67,0-.02,0-.04-.01-.07-2.29-13.29-3.48-26.94-3.48-40.88,0-29.25,5.26-57.28,14.88-83.19.42-1.13.85-2.26,1.29-3.39,22.2-57.09,65.71-103.54,120.75-129.58,29.93-14.16,63.28-22.29,98.47-22.8,1.2-.02,2.4-.03,3.6-.03s2.4,0,3.6.03c51.34.76,98.75,17.7,137.37,45.96l-114.09,122.23Z"/><path fill="#e17da6" d="m389.77,334.14c-8.98,28.45-23.14,54.6-41.37,77.34-12.77,15.93-27.53,30.18-43.91,42.39h0c-.58.43-1.17.86-1.75,1.29-14.37-6.79-27.96-14.97-40.58-24.38,28.51-2.16,54.76-12.39,76.46-28.43,23.13-17.07,41.11-40.73,51.16-68.21Z"/><path fill="#6f58ad" d="m400.83,262.09c0,13.11-1.06,25.97-3.09,38.5-1.85,11.48-4.53,22.68-7.97,33.55-10.05,27.48-28.03,51.14-51.16,68.21-21.7,16.04-47.95,26.27-76.46,28.43-3.73.28-7.5.42-11.3.42-25.4,0-49.3-6.4-70.18-17.68-46.28-24.99-77.71-73.93-77.71-130.21,0-29.22,8.47-56.45,23.1-79.39L0,86.24C41.75,47.79,97.22,24.03,158.23,23.13c1.2-.02,2.4-.03,3.6-.03s2.4,0,3.6.03c35.19.51,68.53,8.64,98.46,22.8,55.03,26.03,98.53,72.45,120.74,129.51,10.46,26.87,16.2,56.09,16.2,86.65Z"/><circle fill="#f2e2e3" cx="297.78" cy="283.31" r="89.01"/><circle fill="#f2e2e3" cx="519" cy="283.31" r="89.01"/><path fill="#f2e2e3" d="m398.74,283.31c0,5.85-.34,11.62-1,17.28-1.36,11.65-4.07,22.89-7.97,33.55-10.05,27.48-28.03,51.14-51.16,68.21-21.7,16.04-47.95,26.27-76.46,28.43-3.73.28-7.5.42-11.3.42-25.4,0-49.3-6.4-70.18-17.68-46.28-24.99-77.71-73.93-77.71-130.21,0-29.22,8.47-56.45,23.1-79.39,13.53-21.24,32.35-38.8,54.61-50.82.42-.23.85-.46,1.29-.69,20.57-10.85,44.01-16.99,68.89-16.99,81.68,0,147.89,66.21,147.89,147.89Z"/><path fill="#f2e2e3" d="m706.71,283.31c0,43.19-18.52,82.06-48.05,109.09-26.3,24.1-61.35,38.8-99.84,38.8-3.83,0-7.62-.15-11.38-.43h-.01c-26.78-2.04-51.56-11.21-72.45-25.61-25.72-17.73-45.54-43.39-55.94-73.45-3.19-9.18-5.48-18.77-6.81-28.67,0-.02,0-.04-.01-.07-.85-6.43-1.29-12.99-1.29-19.66,0-81.68,66.21-147.89,147.89-147.89,24.83,0,48.22,6.12,68.76,16.92,11.31,5.95,21.75,13.32,31.08,21.88,5.76,5.27,11.1,10.99,15.95,17.1,20.1,25.25,32.1,57.22,32.1,91.99Z"/><circle fill="#735aae" cx="310.85" cy="294.37" r="60"/><circle fill="#735aae" cx="505.26" cy="294.37" r="60"/><circle fill="#f2e2e3" cx="287.37" cy="278.74" r="28.2"/><circle fill="#f2e2e3" cx="477.05" cy="278.74" r="28.2"/><polygon fill="#b39dde" points="411.29 460.2 368.68 418.31 410.57 375.71 411.29 460.2"/><polygon fill="#715daf" points="453.18 417.6 411.29 460.2 410.57 375.71 453.18 417.6"/></svg>
   </div>
 </div>
+
+<!-- ================= transcript -> panels signature visual ================= -->
+<div class="section" style="padding-top:0;">
+  <div class="prism reveal">
+    <div class="transcript-card">
+      <div><span class="who">Priya:</span> so we're pushing the <span class="hi1">launch to the 15th</span>, right?</div>
+      <div style="margin-top:8px;">[pause]</div>
+      <div style="margin-top:8px;"><span class="who">Priya:</span> unless design isn't ready — <span class="hi2">Sam, can you confirm by Friday?</span></div>
+      <div style="margin-top:8px;"><span class="who">Sam:</span> yeah, sure, should be fine.</div>
+      <div style="margin-top:8px;"><span class="who">Priya:</span> <span class="hi3">are we actually aligned or just agreeing in the room again?</span></div>
+    </div>
+    <svg class="prism-lines" viewBox="0 0 90 180">
+      <path class="p1" d="M0,90 C40,90 40,20 90,20"></path>
+      <path class="p2" d="M0,90 C40,90 40,90 90,90"></path>
+      <path class="p3" d="M0,90 C40,90 40,160 90,160"></path>
+    </svg>
+    <div class="panel-stack">
+      <div class="mini-panel th"><div class="tag">Thinking · Decision</div><div class="body">Launch date moved to the 15th</div><div class="note">No owner assigned yet</div></div>
+      <div class="mini-panel do"><div class="tag">Doing · Action</div><div class="body">Sam confirms design readiness</div><div class="note">Due Friday · not a decision</div></div>
+      <div class="mini-panel be"><div class="tag">Being · Conflict</div><div class="body">Team agrees in the room, not after</div><div class="note">3rd time this month — recurring</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= stat bar ================= -->
+<div class="statbar">
+  <div class="inner">
+    <div class="stat"><div class="num">8</div><div class="lbl">PM &amp; design partners in active testing</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">signal panels — Thinking, Doing, Being</div></div>
+    <div class="stat"><div class="num">100%</div><div class="lbl">of transcripts kept private, never used to train other models</div></div>
+  </div>
+</div>
+
+<!-- ================= PM vs Leader split ================= -->
+<section class="section" id="split">
+  <div class="section-head reveal">
+    <p class="eyebrow-sm">Who it's for</p>
+    <h2>Built for two different jobs</h2>
+    <p>The person running the meeting and the person who needs to know it happened are usually looking for different things. Entellispace gives each of them their own view.</p>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="pm">Product Managers</button>
+    <button class="tab-btn" data-tab="leader">Leaders &amp; CPOs</button>
+  </div>
+  <div class="tab-panel active" id="tab-pm">
+    <ul>
+      <li><span class="check">✓</span>Stop re-explaining a decision that was already made three meetings ago.</li>
+      <li><span class="check">✓</span>Stop losing action items in a Slack thread nobody scrolls back to.</li>
+      <li><span class="check">✓</span>Get a running record of what the team actually agreed to — not what the deck said.</li>
+    </ul>
+    <div class="tab-quote">"I stopped trying to remember who owns what. It's just there."<cite>— PM, seed-stage fintech · early access partner</cite></div>
+  </div>
+  <div class="tab-panel" id="tab-leader">
+    <ul>
+      <li><span class="check">✓</span>A 30-second read of what actually happened this week — not another meeting to sit through.</li>
+      <li><span class="check">✓</span>See recurring tensions before they become the reason a quarter slips.</li>
+      <li><span class="check">✓</span>Tell the difference between a team that's blocked and a team that's stuck arguing.</li>
+    </ul>
+    <div class="tab-quote">"I don't need the transcript. I need to know what's actually unresolved."<cite>— Founder, developer tools startup · early access partner</cite></div>
+  </div>
+</section>
+
+<!-- ================= Thinking / Doing / Being panels ================= -->
+<div class="section alt" id="panels">
+  <div class="inner">
+    <div class="section-head reveal">
+      <p class="eyebrow-sm">The architecture</p>
+      <h2>Three panels. One conversation.</h2>
+      <p>Every transcript gets sorted into the same three places, so nothing gets misfiled — an action item never gets mistaken for a decision, and a passing complaint never gets mistaken for a pattern.</p>
+    </div>
+    <div class="panels">
+      <div class="panel-card th reveal">
+        <div class="pnum">01</div>
+        <h3>Thinking</h3>
+        <p>The decisions. What got resolved in the room, and what's still open — pulled straight from what was actually said, not inferred from a summary.</p>
+      </div>
+      <div class="panel-card do reveal">
+        <div class="pnum">02</div>
+        <h3>Doing</h3>
+        <p>The actions. Who owns what, kept separate from decisions so nothing gets marked "done" when it was only ever "assigned."</p>
+      </div>
+      <div class="panel-card be reveal">
+        <div class="pnum">03</div>
+        <h3>Being</h3>
+        <p>The signals — the Source of Friction: the disagreements and patterns your team keeps circling back to without naming.</p>
+        <div class="distinction">
+          <div class="dtag constraint">
+            <span class="dl">CONSTRAINT</span>
+            <p>A real limit the team is working around — budget, headcount, a dependency. Not a disagreement, a fact of the situation.</p>
+          </div>
+          <div class="dtag conflict">
+            <span class="dl">CONFLICT</span>
+            <p>An unresolved disagreement about what should happen next. Recurring conflicts feed the Source of Friction.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pipeline reveal">
+      <div class="pipe-step"><div class="circ">01</div><span class="lbl">Sense</span></div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step"><div class="circ">02</div><span class="lbl">Surface</span></div>
+      <span class="pipe-arrow">→</span>
+      <div class="pipe-step"><div class="circ">03</div><span class="lbl">Steer</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= testimonials ================= -->
+<section class="section">
+  <div class="section-head reveal">
+    <p class="eyebrow-sm">Early signal<span class="flag">PLACEHOLDER</span></p>
+    <h2>What design partners are noticing</h2>
+    <p>Entellispace is in active testing, not general release. These are illustrative reactions — swap for real, attributed quotes once partners sign off.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="qmark">"</div>
+      <p>The Thinking panel caught a decision I'd have sworn we made two weeks ago that actually never got resolved.</p>
+      <div class="testi-foot"><span class="testi-tag th">THINKING</span></div>
+      <div class="testi-role">PM, seed-stage fintech</div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="qmark">"</div>
+      <p>Half our "decisions" turned out to be action items with no owner. Seeing that separated out changed how I run standups.</p>
+      <div class="testi-foot"><span class="testi-tag do">DOING</span></div>
+      <div class="testi-role">Founder, developer tools startup</div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="qmark">"</div>
+      <p>It named a conflict we'd been having for a month without ever saying the word "conflict" out loud.</p>
+      <div class="testi-foot"><span class="testi-tag be">BEING</span></div>
+      <div class="testi-role">Design lead, Series A team</div>
+    </div>
+  </div>
+  <p class="testi-note">Illustrative quotes from early partner feedback — placeholders pending attribution approval.</p>
+</section>
+
+<!-- ================= pricing ================= -->
+<div class="section alt" id="pricing">
+  <div class="inner">
+    <div class="section-head reveal" style="margin-left:auto;margin-right:auto;text-align:center;">
+      <p class="eyebrow-sm">Pricing<span class="flag">PLACEHOLDER</span></p>
+      <h2>One plan, while we're in testing</h2>
+      <p>Real tiers will follow once Entellispace is out of active testing. For now, every design partner gets the same thing.</p>
+    </div>
+    <div class="pricing-card reveal">
+      <p class="eyebrow-sm" style="margin:0;">Early Access</p>
+      <div class="price">Free<span> · during testing</span></div>
+      <ul>
+        <li><span class="check">✓</span>Unlimited transcripts</li>
+        <li><span class="check">✓</span>All three panels — Thinking, Doing, Being</li>
+        <li><span class="check">✓</span>Direct line to the founder for feedback</li>
+        <li><span class="check">✓</span>No credit card, no lock-in</li>
+      </ul>
+      <a href="https://intellispace-mvp.onrender.com" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; text-align:center;">Join as a design partner</a>
+      <p class="pricing-note">Replace this card with real tiers before general release.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= about ================= -->
+<section class="section" id="about">
+  <div class="section-head reveal">
+    <p class="eyebrow-sm">About<span class="flag">PLACEHOLDER</span></p>
+    <h2>Why Entellispace exists</h2>
+  </div>
+  <div class="about-grid reveal">
+    <div class="testi-card" style="max-width:320px;">
+      <p style="font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink); margin:0;">"Most tools tell you what a meeting said. Almost none tell you what a team decided."</p>
+    </div>
+    <div>
+      <p>Entellispace started from a simple frustration: meetings end, decisions get made, and two weeks later nobody agrees on what actually happened.</p>
+      <p>Replace this paragraph with your real founder story — background, the problem you kept hitting as a PM/consultant, and why the Thinking/Doing/Being split was the right way to fix it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<div class="section alt" id="faq">
+  <div class="inner" style="max-width:800px;">
+    <div class="section-head reveal">
+      <p class="eyebrow-sm">Questions</p>
+      <h2>Before you ask</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">What happens to my transcripts?<span class="plus">+</span></button>
+        <div class="faq-a"><p>They're used only to generate your Thinking, Doing, and Being panels. They're never used to train any model, ours or anyone else's, and they're not shared with other partners.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between a decision and an action item?<span class="plus">+</span></button>
+        <div class="faq-a"><p>A decision is something the team resolved — a direction that was chosen. An action item is a task assigned to move toward a decision, or to prepare for one. Entellispace keeps them in separate panels — Thinking for decisions, Doing for actions — so one never gets logged as the other.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What's the difference between a constraint and a conflict?<span class="plus">+</span></button>
+        <div class="faq-a"><p>A constraint is a real limit the team is working around — a budget, a dependency, a deadline that isn't moving. A conflict is an unresolved disagreement about what should happen. Treating a constraint like a conflict burns time arguing about something that was never actually a choice. Treating a conflict like a constraint means the real disagreement never gets named.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Why Thinking, Doing, and Being?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Most meeting tools stop at "what was said." Thinking and Doing capture what got decided and what got assigned. Being captures the layer underneath both — the recurring tensions and constraints that quietly shape whether decisions actually stick.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is this for PMs or for leadership?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Both, with different views. PMs get the detail — decisions, owners, open threads. Leaders get a short read of what's resolved, what's stuck, and where the friction actually is.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Is it available now?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Entellispace is in active testing with a small group of PM and design partners. Book a demo above and we'll follow up about onboarding.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CTA band ================= -->
+<div class="ctaband">
+  <div class="inner">
+    <h2>Bring your next transcript. See what it was really saying.</h2>
+    <p>No setup beyond a transcript. Free during early access.</p>
+    <div class="cta-row">
+      <a href="https://intellispace-mvp.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">See it on your next meeting</a>
+      <a href="#faq" class="btn btn-secondary">Read the FAQ</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= dictionary footer ================= -->
+<div class="dict">
+  <span class="word">Entellispace</span><span class="pron">/ɛn-tel-ə-speɪs/</span>
+  <span class="pos">noun</span>
+  <ol>
+    <li>the gap between what a meeting says and what a team decides.</li>
+    <li>the layer where strategy actually succeeds or fails.</li>
+  </ol>
+</div>
+
+<footer>
+  <div class="foot-grid">
+    <div class="foot-col">
+      <div class="nav-brand" style="font-size:19px;">Entellispace</div>
+      <p style="margin-top:14px; max-width:280px;">Meeting intelligence for teams who want to know what actually got decided.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Product</h4>
+      <a href="#panels">Thinking</a>
+      <a href="#panels">Doing</a>
+      <a href="#panels">Being</a>
+      <a href="#panels">Source of Friction</a>
+    </div>
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://intellispace-mvp.onrender.com" target="_blank" rel="noopener">Live MVP →</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 Entellispace</span>
+    <span>Built by Reframe</span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-'+btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    const a = item.querySelector('.faq-a');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i=>{
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        a.style.maxHeight = a.scrollHeight + 'px';
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
 
 </body>
 </html>
